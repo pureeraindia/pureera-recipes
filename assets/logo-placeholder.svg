@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  PureEra — logo-placeholder.svg
+  Standalone version of the site's "purity seal" mark (see .seal / SEAL_SVG
+  in script.js) plus the wordmark, rendered with fixed brand colors instead
+  of currentColor so it works outside the site's CSS context — e.g. as a
+  favicon source, a social-share image, or a printable header on PDFs.
+
+  Brand colors (match style.css tokens):
+    olive-deep : #223F27
+    olive      : #355E3B
+    gold       : #C89B3C
+    cream      : #F8F4EC
+-->
+<svg width="360" height="120" viewBox="0 0 360 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="pureEraLogoTitle">
+  <title id="pureEraLogoTitle">PureEra — From Science. For Purity. For You.</title>
+
+  <rect width="360" height="120" fill="none"/>
+
+  <!-- Seal mark -->
+  <g transform="translate(10, 10)">
+    <circle cx="50" cy="50" r="46" fill="none" stroke="#C89B3C" stroke-width="2"/>
+    <circle cx="50" cy="50" r="34" fill="none" stroke="#C89B3C" stroke-width="1.2" opacity="0.55"/>
+    <g stroke="#355E3B" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M50 74V32"/>
+      <path d="M50 32c0-13 8-21 24-21-5 16-13 24-24 24"/>
+      <path d="M50 50c0-13-8-21-24-21 5 16 13 24 24 24"/>
+    </g>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="130" y="60" font-family="Fraunces, 'Iowan Old Style', Georgia, serif" font-size="40" font-weight="600" fill="#223F27">Pure<tspan font-style="italic" font-weight="500" fill="#C89B3C">Era</tspan></text>
+
+  <!-- Tagline -->
+  <text x="132" y="84" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="11" letter-spacing="1.5" fill="#5C4632">FROM SCIENCE. FOR PURITY. FOR YOU.</text>
+</svg>

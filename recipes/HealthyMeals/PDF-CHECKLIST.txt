@@ -1,0 +1,18 @@
+PDF filename checklist — Healthy Meals
+Folder: recipes/HealthyMeals/
+Total expected files: 13
+========================================
+
+[ ] QuinoaBuddhaBowl.pdf   (Quinoa Buddha Bowl)
+[ ] GrilledSalmonSalad.pdf   (Grilled Salmon Salad)
+[ ] AvocadoToast.pdf   (Avocado Toast)
+[ ] ZucchiniNoodles.pdf   (Zucchini Noodles Primavera)
+[ ] GreekYogurtParfait.pdf   (Greek Yogurt Parfait)
+[ ] BakedSweetPotato.pdf   (Baked Sweet Potato)
+[ ] ChickpeaSalad.pdf   (Chickpea Power Salad)
+[ ] OvernightOats.pdf   (Overnight Oats)
+[ ] LentilSoup.pdf   (Lentil Soup)
+[ ] GrilledChickenBowl.pdf   (Grilled Chicken Bowl)
+[ ] VeggieWrap.pdf   (Roasted Veggie Wrap)
+[ ] GreenSmoothie.pdf   (Green Detox Smoothie)
+[ ] MilletKhichdi.pdf   (Millet Khichdi)

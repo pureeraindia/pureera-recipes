@@ -1,0 +1,19 @@
+PDF filename checklist — Indian Cuisine
+Folder: recipes/IndianCuisine/
+Total expected files: 14
+========================================
+
+[ ] ButterChicken.pdf   (Butter Chicken)
+[ ] PaneerTikkaMasala.pdf   (Paneer Tikka Masala)
+[ ] DalMakhani.pdf   (Dal Makhani)
+[ ] HyderabadiBiryani.pdf   (Hyderabadi Biryani)
+[ ] CholeBhature.pdf   (Chole Bhature)
+[ ] PalakPaneer.pdf   (Palak Paneer)
+[ ] RoganJosh.pdf   (Rogan Josh)
+[ ] MalaiKofta.pdf   (Malai Kofta)
+[ ] BainganBharta.pdf   (Baingan Bharta)
+[ ] TandooriRoti.pdf   (Tandoori Roti)
+[ ] KadaiVegetable.pdf   (Kadai Vegetable)
+[ ] RajmaChawal.pdf   (Rajma Chawal)
+[ ] FishCurry.pdf   (Fish Curry)
+[ ] GulabJamun.pdf   (Gulab Jamun)

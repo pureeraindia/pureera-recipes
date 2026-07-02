@@ -1,0 +1,18 @@
+PDF filename checklist — Mexican
+Folder: recipes/Mexican/
+Total expected files: 13
+========================================
+
+[ ] Nachos.pdf   (Loaded Nachos)
+[ ] ChickenTinga.pdf   (Chicken Tinga Tacos)
+[ ] Elote.pdf   (Street Corn Elote)
+[ ] Guacamole.pdf   (Guacamole Fresco)
+[ ] BarbacoaBurrito.pdf   (Beef Barbacoa Burrito)
+[ ] Enchiladas.pdf   (Cheese Enchiladas)
+[ ] PicoDeGallo.pdf   (Pico de Gallo Salsa)
+[ ] Churros.pdf   (Churros con Chocolate)
+[ ] ChilesRellenos.pdf   (Chiles Rellenos)
+[ ] ShrimpCeviche.pdf   (Shrimp Ceviche)
+[ ] Quesadillas.pdf   (Quesadillas Supreme)
+[ ] PozoleRojo.pdf   (Pozole Rojo)
+[ ] TresLeches.pdf   (Tres Leches Cake)

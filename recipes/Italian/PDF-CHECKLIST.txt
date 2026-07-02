@@ -1,0 +1,19 @@
+PDF filename checklist — Italian
+Folder: recipes/Italian/
+Total expected files: 14
+========================================
+
+[ ] Pizza.pdf   (Margherita Pizza)
+[ ] TruffleRisotto.pdf   (Truffle Mushroom Risotto)
+[ ] Carbonara.pdf   (Classic Spaghetti Carbonara)
+[ ] Lasagna.pdf   (Lasagna al Forno)
+[ ] PestoPasta.pdf   (Pesto Genovese Pasta)
+[ ] BurrataCaprese.pdf   (Burrata Caprese)
+[ ] OssoBuco.pdf   (Osso Buco)
+[ ] Tiramisu.pdf   (Tiramisu)
+[ ] Focaccia.pdf   (Focaccia al Rosmarino)
+[ ] AglioOlio.pdf   (Aglio e Olio)
+[ ] ChickenParm.pdf   (Chicken Parmigiana)
+[ ] PannaCotta.pdf   (Panna Cotta)
+[ ] Minestrone.pdf   (Minestrone Soup)
+[ ] Bruschetta.pdf   (Bruschetta al Pomodoro)

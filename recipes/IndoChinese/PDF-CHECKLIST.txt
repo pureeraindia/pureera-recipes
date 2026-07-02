@@ -1,0 +1,18 @@
+PDF filename checklist — Indo-Chinese
+Folder: recipes/IndoChinese/
+Total expected files: 13
+========================================
+
+[ ] VegManchurian.pdf   (Veg Manchurian)
+[ ] ChilliPaneer.pdf   (Chilli Paneer)
+[ ] HakkaNoodles.pdf   (Hakka Noodles)
+[ ] SchezwanRice.pdf   (Schezwan Fried Rice)
+[ ] ChickenLollipop.pdf   (Chicken Lollipop)
+[ ] Gobi65.pdf   (Gobi 65)
+[ ] HoneyChilliPotato.pdf   (Honey Chilli Potato)
+[ ] SweetCornSoup.pdf   (Sweet Corn Soup)
+[ ] AmericanChopsuey.pdf   (American Chopsuey)
+[ ] DragonChicken.pdf   (Dragon Chicken)
+[ ] ChilliMushroom.pdf   (Crispy Chilli Mushroom)
+[ ] SpringRolls.pdf   (Spring Rolls)
+[ ] ManchowSoup.pdf   (Manchow Soup)

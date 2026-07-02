@@ -1,0 +1,18 @@
+PDF filename checklist — Signature Seasonings
+Folder: recipes/Seasonings/
+Total expected files: 13
+========================================
+
+[ ] HimalayanHerbBlend.pdf   (PureEra Himalayan Herb Blend)
+[ ] TurmericSpiceMix.pdf   (Golden Turmeric Spice Mix)
+[ ] BarbecueRub.pdf   (Smoky Barbecue Rub)
+[ ] LemonPepper.pdf   (Zesty Lemon Pepper)
+[ ] ItalianHerbMedley.pdf   (Italian Herb Medley)
+[ ] GaramMasalaReserve.pdf   (Garam Masala Reserve)
+[ ] ChilliGarlicFusion.pdf   (Chilli Garlic Fusion)
+[ ] CoastalCurryPowder.pdf   (Coastal Curry Powder)
+[ ] RosemarySeaSalt.pdf   (Rosemary Sea Salt)
+[ ] PeriPeriBlend.pdf   (Peri Peri Blend)
+[ ] UmamiDust.pdf   (Everyday Umami Dust)
+[ ] TandooriMasalaGold.pdf   (Tandoori Masala Gold)
+[ ] HerbCitrusMarinade.pdf   (Herb & Citrus Marinade)

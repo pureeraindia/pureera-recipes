@@ -1,0 +1,18 @@
+PDF filename checklist — Indian Street Food
+Folder: recipes/StreetFood/
+Total expected files: 13
+========================================
+
+[ ] PaniPuri.pdf   (Pani Puri)
+[ ] PavBhaji.pdf   (Pav Bhaji)
+[ ] VadaPav.pdf   (Vada Pav)
+[ ] DahiBhalla.pdf   (Dahi Bhalla)
+[ ] AlooTikkiChaat.pdf   (Aloo Tikki Chaat)
+[ ] BhelPuri.pdf   (Bhel Puri)
+[ ] SamosaChaat.pdf   (Samosa Chaat)
+[ ] SevPuri.pdf   (Sev Puri)
+[ ] KathiRoll.pdf   (Kathi Roll)
+[ ] RagdaPattice.pdf   (Ragda Pattice)
+[ ] Dabeli.pdf   (Dabeli)
+[ ] CornChaat.pdf   (Corn Chaat)
+[ ] MasalaPuri.pdf   (Masala Puri)

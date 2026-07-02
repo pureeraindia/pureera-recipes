@@ -1,0 +1,127 @@
+PureEra — Master PDF Filename Manifest
+=========================================
+Total recipes: 106  |  Total categories: 8
+Generated from data.js — regenerate this file if data.js changes.
+
+recipes/Italian/   (14 files)
+  Pizza.pdf
+  TruffleRisotto.pdf
+  Carbonara.pdf
+  Lasagna.pdf
+  PestoPasta.pdf
+  BurrataCaprese.pdf
+  OssoBuco.pdf
+  Tiramisu.pdf
+  Focaccia.pdf
+  AglioOlio.pdf
+  ChickenParm.pdf
+  PannaCotta.pdf
+  Minestrone.pdf
+  Bruschetta.pdf
+
+recipes/Mexican/   (13 files)
+  Nachos.pdf
+  ChickenTinga.pdf
+  Elote.pdf
+  Guacamole.pdf
+  BarbacoaBurrito.pdf
+  Enchiladas.pdf
+  PicoDeGallo.pdf
+  Churros.pdf
+  ChilesRellenos.pdf
+  ShrimpCeviche.pdf
+  Quesadillas.pdf
+  PozoleRojo.pdf
+  TresLeches.pdf
+
+recipes/IndoChinese/   (13 files)
+  VegManchurian.pdf
+  ChilliPaneer.pdf
+  HakkaNoodles.pdf
+  SchezwanRice.pdf
+  ChickenLollipop.pdf
+  Gobi65.pdf
+  HoneyChilliPotato.pdf
+  SweetCornSoup.pdf
+  AmericanChopsuey.pdf
+  DragonChicken.pdf
+  ChilliMushroom.pdf
+  SpringRolls.pdf
+  ManchowSoup.pdf
+
+recipes/StreetFood/   (13 files)
+  PaniPuri.pdf
+  PavBhaji.pdf
+  VadaPav.pdf
+  DahiBhalla.pdf
+  AlooTikkiChaat.pdf
+  BhelPuri.pdf
+  SamosaChaat.pdf
+  SevPuri.pdf
+  KathiRoll.pdf
+  RagdaPattice.pdf
+  Dabeli.pdf
+  CornChaat.pdf
+  MasalaPuri.pdf
+
+recipes/IndianCuisine/   (14 files)
+  ButterChicken.pdf
+  PaneerTikkaMasala.pdf
+  DalMakhani.pdf
+  HyderabadiBiryani.pdf
+  CholeBhature.pdf
+  PalakPaneer.pdf
+  RoganJosh.pdf
+  MalaiKofta.pdf
+  BainganBharta.pdf
+  TandooriRoti.pdf
+  KadaiVegetable.pdf
+  RajmaChawal.pdf
+  FishCurry.pdf
+  GulabJamun.pdf
+
+recipes/Bakery/   (13 files)
+  Croissants.pdf
+  ChocolateBrownies.pdf
+  BananaBread.pdf
+  CinnamonRolls.pdf
+  Sourdough.pdf
+  RedVelvetCupcakes.pdf
+  BlueberryMuffins.pdf
+  ColdBrew.pdf
+  MatchaLatte.pdf
+  Macarons.pdf
+  CheeseDanish.pdf
+  CaramelCappuccino.pdf
+  Biscotti.pdf
+
+recipes/HealthyMeals/   (13 files)
+  QuinoaBuddhaBowl.pdf
+  GrilledSalmonSalad.pdf
+  AvocadoToast.pdf
+  ZucchiniNoodles.pdf
+  GreekYogurtParfait.pdf
+  BakedSweetPotato.pdf
+  ChickpeaSalad.pdf
+  OvernightOats.pdf
+  LentilSoup.pdf
+  GrilledChickenBowl.pdf
+  VeggieWrap.pdf
+  GreenSmoothie.pdf
+  MilletKhichdi.pdf
+
+recipes/Seasonings/   (13 files)
+  HimalayanHerbBlend.pdf
+  TurmericSpiceMix.pdf
+  BarbecueRub.pdf
+  LemonPepper.pdf
+  ItalianHerbMedley.pdf
+  GaramMasalaReserve.pdf
+  ChilliGarlicFusion.pdf
+  CoastalCurryPowder.pdf
+  RosemarySeaSalt.pdf
+  PeriPeriBlend.pdf
+  UmamiDust.pdf
+  TandooriMasalaGold.pdf
+  HerbCitrusMarinade.pdf
+

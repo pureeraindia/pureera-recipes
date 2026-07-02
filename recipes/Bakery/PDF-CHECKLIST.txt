@@ -1,0 +1,18 @@
+PDF filename checklist — Bakery & Café
+Folder: recipes/Bakery/
+Total expected files: 13
+========================================
+
+[ ] Croissants.pdf   (Buttery Croissants)
+[ ] ChocolateBrownies.pdf   (Belgian Chocolate Brownies)
+[ ] BananaBread.pdf   (Classic Banana Bread)
+[ ] CinnamonRolls.pdf   (Cinnamon Rolls)
+[ ] Sourdough.pdf   (Artisan Sourdough)
+[ ] RedVelvetCupcakes.pdf   (Red Velvet Cupcakes)
+[ ] BlueberryMuffins.pdf   (Blueberry Muffins)
+[ ] ColdBrew.pdf   (Cold Brew Coffee)
+[ ] MatchaLatte.pdf   (Matcha Latte)
+[ ] Macarons.pdf   (French Macarons)
+[ ] CheeseDanish.pdf   (Cheese Danish)
+[ ] CaramelCappuccino.pdf   (Caramel Cappuccino)
+[ ] Biscotti.pdf   (Almond Biscotti)

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PureEra — Premium Recipe Library</title>
+<meta name="description" content="PureEra: 100+ premium recipes across Italian, Mexican, Indo-Chinese, Indian street food, home cuisine, bakery, healthy meals, and signature seasonings.">
+<link rel="icon" type="image/svg+xml" href="assets/logo-placeholder.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<noscript>
+  <div style="max-width:640px;margin:80px auto;padding:24px 28px;font-family:sans-serif;background:#F1EADA;border-radius:16px;text-align:center;">
+    <strong>PureEra needs JavaScript enabled.</strong>
+    <p>This is a fully static site with no server, but the recipe library, search, and navigation are rendered client-side. Please enable JavaScript to browse the collection.</p>
+  </div>
+</noscript>
+
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ============================= HEADER ============================= -->
+<header class="site-header">
+  <div class="wrap">
+    <a href="#/" class="brand" aria-label="PureEra home">
+      <span class="seal" id="seal-header"></span>
+      <span class="brand-word">Pure<em>Era</em></span>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="#/" data-nav="home">Home</a>
+      <a href="#/library" data-nav="library">All Recipes</a>
+      <a href="#/library?cat=seasonings" data-nav="seasonings">Seasonings</a>
+      <a href="#about" data-nav="about">About</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" id="navSearchBtn" aria-label="Search recipes">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.2" y2="16.2"/></svg>
+      </button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============================= HOME VIEW ============================= -->
+<main id="homeView">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy reveal">
+        <span class="eyebrow">From Science. For Purity. For You.</span>
+        <h1 class="hero-title">Explore 100+<br><span class="accent">Premium Recipes</span></h1>
+        <p class="hero-sub">Cook restaurant-style dishes with PureEra — tested formulas, precise method, and ingredients you can trust.</p>
+        <div class="hero-cta">
+          <a href="#/library" class="btn btn-primary">
+            Browse the library
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#categories" class="btn btn-ghost">View categories</a>
+        </div>
+        <div class="hero-stats">
+          <div><b id="statRecipes">100+</b><span>Recipes</span></div>
+          <div><b id="statCats">8</b><span>Categories</span></div>
+          <div><b>PDF</b><span>Downloadable</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="plate"></div>
+        <div class="ring"></div>
+        <span class="seal-big" id="seal-hero"></span>
+        <div class="tag-float"><span class="dot"></span> Small-batch tested</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true">
+    <span class="line"></span>
+    <svg class="sprig-mini" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V7"/><path d="M12 7c0-3 2-5 6-5-1 4-3 6-6 6"/><path d="M12 12c0-3-2-5-6-5 1 4 3 6 6 6"/></svg>
+    <span class="line rev"></span>
+  </div>
+
+  <!-- CATEGORIES -->
+  <section class="section" id="categories">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">The Library</span>
+        <h2 class="section-title">Eight collections, one standard</h2>
+        <p class="section-desc">Every recipe is written the same careful way — clear method, exact measures, and a PDF you can keep in the kitchen.</p>
+      </div>
+      <div class="category-grid" id="categoryGrid"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="about-mark reveal">
+        <span class="seal" id="seal-about"></span>
+      </div>
+      <div class="about-copy reveal">
+        <span class="eyebrow">About PureEra</span>
+        <h2 class="section-title">Recipes built like formulas, cooked like heirlooms</h2>
+        <p>PureEra started with one idea: food should be as considered as the science behind it. Every recipe in this library is measured, tested, and rewritten until the method is unmistakably clear — no guesswork, no filler.</p>
+        <ul class="about-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 100+ recipes across 8 curated collections</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Downloadable PDF for every single recipe</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Our own signature seasoning blends, ground in small batches</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================= LIBRARY VIEW ============================= -->
+<section class="library" id="libraryView" hidden>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" id="libEyebrow">The Library</span>
+      <h2 class="section-title" id="libTitle">All Recipes</h2>
+      <p class="section-desc" id="libDesc">Search by name, or filter the collection by category.</p>
+    </div>
+
+    <div class="lib-toolbar reveal">
+      <label class="search-field">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.2" y2="16.2"/></svg>
+        <input type="text" id="searchInput" placeholder="Search recipes — try “pizza” or “paneer”" autocomplete="off" aria-label="Search recipes">
+      </label>
+      <span class="result-meta" id="resultMeta">106 recipes</span>
+    </div>
+
+    <div class="filter-row" id="filterRow" role="group" aria-label="Filter by category"></div>
+
+    <div class="recipe-grid" id="recipeGrid"></div>
+  </div>
+</section>
+
+<!-- ============================= FOOTER ============================= -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#/" class="brand">
+          <span class="seal" id="seal-footer"></span>
+          <span class="brand-word">Pure<em>Era</em></span>
+        </a>
+        <p>From Science. For Purity. For You. A premium recipe library and signature seasoning line.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Library</h4>
+        <ul id="footerCatsA"></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Collections</h4>
+        <ul id="footerCatsB"></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Site</h4>
+        <ul>
+          <li><a href="#/">Home</a></li>
+          <li><a href="#/library">All Recipes</a></li>
+          <li><a href="#about">About PureEra</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> PureEra. All rights reserved.</span>
+      <span>Built with HTML, CSS &amp; JavaScript — no frameworks.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
