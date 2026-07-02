@@ -76,7 +76,7 @@ const CATEGORIES = [
 /* pdf paths follow: recipes/<folder>/<file>.pdf (files are placeholders) */
 const RECIPES = [
   // ---------------- Italian ----------------
-  { id: "it-01", category: "italian", name: "Margherita Pizza", description: "Thin Neapolitan crust, San Marzano tomato, fior di latte.", pdf: "Pizza.pdf" },
+  { id: "it-01", category: "italian", name: "PERI PERI PANEER", description: "Thin Neapolitan crust, San Marzano tomato, fior di latte.", pdf: "recipes/Italian/PERI PERI PANEER.pdf" },
   { id: "it-02", category: "italian", name: "Truffle Mushroom Risotto", description: "Slow-stirred arborio rice finished with black truffle oil.", pdf: "TruffleRisotto.pdf" },
   { id: "it-03", category: "italian", name: "Classic Spaghetti Carbonara", description: "Guanciale, egg yolk, and pecorino — no cream, ever.", pdf: "Carbonara.pdf" },
   { id: "it-04", category: "italian", name: "Lasagna al Forno", description: "Layered ragù, béchamel, and slow-baked pasta sheets.", pdf: "Lasagna.pdf" },
