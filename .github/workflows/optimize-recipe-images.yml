@@ -1,0 +1,55 @@
+name: Optimize recipe images
+
+on:
+  push:
+    branches:
+      - optimize-recipe-images
+    paths:
+      - ".github/workflows/optimize-recipe-images.yml"
+      - "scripts/optimize_recipe_images.py"
+      - "scripts/recipe-image-map.json"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          ref: optimize-recipe-images
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install image tools
+        run: python -m pip install --upgrade pillow gdown
+
+      - name: Download the public PureEra recipe folder
+        run: |
+          rm -rf /tmp/pureera-drive
+          mkdir -p /tmp/pureera-drive
+          gdown --folder "https://drive.google.com/drive/folders/1f_u5oDQal3YrVJV0GiIIuZFVZqwnpZU6" -O /tmp/pureera-drive --remaining-ok
+
+      - name: Build optimized WebP gallery
+        run: python scripts/optimize_recipe_images.py /tmp/pureera-drive "$GITHUB_WORKSPACE"
+
+      - name: Commit optimized recipe images
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add recipes
+          if git diff --cached --quiet; then
+            echo "No image changes to commit."
+            exit 0
+          fi
+          git commit -m "Add optimized recipe gallery images"
+          git push origin HEAD:optimize-recipe-images
