@@ -37,7 +37,7 @@ jobs:
         run: |
           rm -rf /tmp/pureera-drive
           mkdir -p /tmp/pureera-drive
-          gdown --folder "https://drive.google.com/drive/folders/1f_u5oDQal3YrVJV0GiIIuZFVZqwnpZU6" -O /tmp/pureera-drive --remaining-ok
+          gdown --folder "https://drive.google.com/drive/folders/1f_u5oDQal3YrVJV0GiIIuZFVZqwnpZU6" -O /tmp/pureera-drive
 
       - name: Build optimized WebP gallery
         run: python scripts/optimize_recipe_images.py /tmp/pureera-drive "$GITHUB_WORKSPACE"
