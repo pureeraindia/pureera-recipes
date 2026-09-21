@@ -9,32 +9,26 @@
   "use strict";
 
   /* ---------------------------------------------------------------------
-     0. ICON LIBRARY
-     Small inline SVG strings, all stroke="currentColor" so they inherit
-     color from their container — matches the rest of the design system.
+     0. ICONS
+     Category artwork is stored as PNG files in assets/icons/. Utility
+     interface icons remain inline SVG so they inherit the current colour.
      --------------------------------------------------------------------- */
   const ICONS = {
-    pizza: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 20h18L12 3z"/><circle cx="12" cy="10.5" r="1"/><circle cx="9" cy="15" r="1"/><circle cx="15" cy="15" r="1"/></svg>`,
-    taco: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 18 0"/><path d="M3 12c0 4.4 4 8 9 9 5-1 9-4.6 9-9"/><path d="M7.5 12.5v3M12 12.5v4M16.5 12.5v3"/></svg>`,
-    noodles: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16"/><path d="M4 12c0 4.4 3.6 8 8 8s8-3.6 8-8"/><path d="M9 5c-1 1-1 2 0 3M12 4c-1 1-1 2 0 3M15 5c-1 1-1 2 0 3"/></svg>`,
-    cart: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.3"/><circle cx="17" cy="20" r="1.3"/><path d="M2 3h2l2.6 12.4a2 2 0 0 0 2 1.6h8.4a2 2 0 0 0 2-1.6L21 7H6"/></svg>`,
-    curry: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h16l-1.4 8.2a2 2 0 0 1-2 1.8H7.4a2 2 0 0 1-2-1.8L4 10z"/><path d="M2 10h20"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>`,
-    croissant: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16c1-7 6-12 11-12 2 0 3 1 3 2 0 3-4 4-6 7 3-1 6 0 6 2 0 4-6 7-10 7-2 0-4-3-4-6z"/></svg>`,
-    leaf: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c8 0 14-6 14-14-8 0-14 6-14 14z"/><path d="M5 19c3-5 6-8 11-11"/></svg>`,
-    jar: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="9" width="10" height="12" rx="2"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/><path d="M7 13.5h10"/></svg>`,
     download: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5v11"/><path d="M7 10.5l5 5 5-5"/><path d="M5 20h14"/></svg>`,
     arrow: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>`,
     emptySearch: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.2" y2="16.2"/><line x1="8" y1="11" x2="14" y2="11"/></svg>`
   };
 
-  /* Purity seal — the repeating brand mark used in header / hero / about / footer */
-  const SEAL_SVG = `<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-    <circle class="ring-outer" cx="20" cy="20" r="18"/>
-    <circle class="ring-inner" cx="20" cy="20" r="13"/>
-    <path class="sprig" d="M20 29V13"/>
-    <path class="sprig" d="M20 13c0-5 3-8 9-8-2 6-5 9-9 9"/>
-    <path class="sprig" d="M20 20c0-5-3-8-9-8 2 6 5 9 9 9"/>
-  </svg>`;
+  const CATEGORY_ICON_PATHS = {
+    "healthy-meals": "assets/icons/healthy-meals.png",
+    "italian": "assets/icons/italian.png",
+    "indian-street-food": "assets/icons/indian-street-food.png",
+    "indo-chinese": "assets/icons/indo-chinese.png",
+    "mexican": "assets/icons/mexican.png",
+    "indian-cuisine": "assets/icons/indian-cuisine.png",
+    "cafe": "assets/icons/cafe.png",
+    "seasoning": "assets/icons/seasoning.png"
+  };
 
   /* ---------------------------------------------------------------------
      1. CATEGORY COLOUR PALETTES (for generated SVG placeholder art)
@@ -52,6 +46,18 @@
     "seasonings":     ["#355E3B", "#C89B3C"]
   };
   const DEFAULT_PALETTE = ["#5C4632", "#8C6B4C"];
+
+  function hexToRgba(hex, alpha) {
+    const value = String(hex || "").replace("#", "").trim();
+    if (![3, 6].includes(value.length)) return `rgba(92, 70, 50, ${alpha})`;
+    const full = value.length === 3
+      ? value.split("").map((ch) => ch + ch).join("")
+      : value;
+    const r = Number.parseInt(full.slice(0, 2), 16);
+    const g = Number.parseInt(full.slice(2, 4), 16);
+    const b = Number.parseInt(full.slice(4, 6), 16);
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+  }
 
   /* ---------------------------------------------------------------------
      2. STATE + DOM REFERENCES
@@ -74,11 +80,18 @@
   const mainNav = $("#mainNav");
   const navToggle = $("#navToggle");
   const navSearchBtn = $("#navSearchBtn");
-  const footerCatsA = $("#footerCatsA");
-  const footerCatsB = $("#footerCatsB");
-  const statRecipes = $("#statRecipes");
-  const statCats = $("#statCats");
+  const footerCats = $("#footerCats");
+  const totalRecipeCount = $("#totalRecipeCount");
+  const aboutRecipeCount = $("#aboutRecipeCount");
   const yearEl = $("#year");
+  const recipeModal = $("#recipeModal");
+  const recipeModalCategory = $("#recipeModalCategory");
+  const recipeModalTitle = $("#recipeModalTitle");
+  const recipeModalDescription = $("#recipeModalDescription");
+  const recipePreviewFrame = $("#recipePreviewFrame");
+  const recipePreviewNote = $("#recipePreviewNote");
+  const recipeOpenLink = $("#recipeOpenLink");
+  const recipeDownloadLink = $("#recipeDownloadLink");
 
   const getCategory = (slug) => CATEGORIES.find((c) => c.slug === slug);
   const escapeHtml = (str) =>
@@ -96,12 +109,23 @@
     return `linear-gradient(155deg, ${from}, ${to})`;
   }
 
+  function categoryIconMarkup(category, className) {
+    const path = category && CATEGORY_ICON_PATHS[category.icon];
+    if (!path) return "";
+    return `<img class="${className}" src="${path}" alt="" aria-hidden="true">`;
+  }
+
   function recipeMediaMarkup(recipe, category) {
-    const icon = ICONS[category && category.icon] || ICONS.leaf;
+    const previewImage = Array.isArray(recipe.images) && recipe.images.length
+      ? recipeImagePath(recipe, category, recipe.images[0])
+      : "";
+
     return `
-      <div class="recipe-media" style="background:${mediaBackground(recipe.category)}">
+      <div class="recipe-media${previewImage ? " has-photo" : ""}" style="background:${previewImage ? "#C9803D" : mediaBackground(recipe.category)}">
         <span class="cat-badge">${escapeHtml(category ? category.name : recipe.category)}</span>
-        ${icon}
+        ${previewImage
+          ? `<img class="recipe-preview-photo" src="${escapeHtml(previewImage)}" alt="${escapeHtml(recipe.name)} preview">`
+          : categoryIconMarkup(category, "category-art")}
       </div>`;
   }
 
@@ -114,31 +138,50 @@
 
   function renderCategoryGrid() {
     if (!categoryGrid) return;
-    categoryGrid.innerHTML = CATEGORIES.map((cat) => `
-      <a class="cat-card reveal" href="#/library?cat=${encodeURIComponent(cat.slug)}">
-        <span class="cat-icon">${ICONS[cat.icon] || ICONS.leaf}</span>
-        <h3 class="cat-name">${escapeHtml(cat.name)}</h3>
-        <span class="cat-tag">${escapeHtml(cat.tag)}</span>
-        <p class="cat-blurb">${escapeHtml(cat.blurb)}</p>
-        <span class="cat-count">${countInCategory(cat.slug)} recipes ${ICONS.arrow}</span>
-      </a>
-    `).join("");
+    categoryGrid.innerHTML = CATEGORIES.map((cat) => {
+      const count = countInCategory(cat.slug);
+      const label = count === 1 ? "recipe" : "recipes";
+      const [accent, accentSoft] = CATEGORY_PALETTE[cat.slug] || DEFAULT_PALETTE;
+      const styleVars = [
+        `--cat-accent:${accent}`,
+        `--cat-accent-soft:${accentSoft}`,
+        `--cat-accent-mist:${hexToRgba(accentSoft, 0.16)}`,
+        `--cat-accent-border:${hexToRgba(accent, 0.22)}`,
+        `--cat-accent-icon-bg:${hexToRgba(accentSoft, 0.18)}`,
+        `--cat-accent-icon-ring:${hexToRgba(accent, 0.14)}`
+      ].join(";");
+      return `
+        <a class="cat-card reveal" style="${styleVars}" href="#/library?cat=${encodeURIComponent(cat.slug)}">
+          <span class="cat-icon">${categoryIconMarkup(cat, "cat-icon-image")}</span>
+          <h3 class="cat-name">${escapeHtml(cat.name)}</h3>
+          <span class="cat-tag">${escapeHtml(cat.tag)}</span>
+          <p class="cat-blurb">${escapeHtml(cat.blurb)}</p>
+          <span class="cat-count">${count} ${label} ${ICONS.arrow}</span>
+        </a>`;
+    }).join("");
     observeReveals();
   }
 
   function renderFooterLinks() {
-    if (!footerCatsA || !footerCatsB) return;
-    const half = Math.ceil(CATEGORIES.length / 2);
-    const colA = CATEGORIES.slice(0, half);
-    const colB = CATEGORIES.slice(half);
+    if (!footerCats) return;
+
+    // The footer has one Collections column. Show all eight cookbook
+    // categories here while keeping the separate Library column removed.
     const li = (cat) => `<li><a href="#/library?cat=${encodeURIComponent(cat.slug)}">${escapeHtml(cat.name)}</a></li>`;
-    footerCatsA.innerHTML = colA.map(li).join("");
-    footerCatsB.innerHTML = colB.map(li).join("");
+    footerCats.innerHTML = CATEGORIES.map(li).join("");
   }
 
-  function renderStats() {
-    if (statRecipes) statRecipes.textContent = `${RECIPES.length}+`;
-    if (statCats) statCats.textContent = String(CATEGORIES.length);
+  function updateRecipeCounts() {
+    const recipeCount = Array.isArray(RECIPES) ? RECIPES.length : 0;
+    const displayCount = `${recipeCount}+`;
+
+    if (totalRecipeCount) {
+      totalRecipeCount.textContent = displayCount;
+    }
+
+    if (aboutRecipeCount) {
+      aboutRecipeCount.textContent = displayCount;
+    }
   }
 
   /* ---------------------------------------------------------------------
@@ -146,6 +189,8 @@
      --------------------------------------------------------------------- */
   function renderFilterRow() {
     if (!filterRow) return;
+    // The header navigation has only Home, All Recipes, and About.
+    // This filter row still lists every cookbook category, including Seasoning.
     const chips = [{ slug: "all", name: "All Recipes" }, ...CATEGORIES];
     filterRow.innerHTML = chips.map((c) => `
       <button type="button" class="chip${state.cat === c.slug ? " is-active" : ""}" data-cat="${c.slug}" aria-pressed="${state.cat === c.slug}">
@@ -172,7 +217,7 @@
   function updateLibraryHeader() {
     if (!libEyebrow || !libTitle || !libDesc) return;
     if (state.cat === "all") {
-      libEyebrow.textContent = "The Library";
+      libEyebrow.textContent = "THE COOKBOOK";
       libTitle.textContent = "All Recipes";
       libDesc.textContent = "Search by name, or filter the collection by category.";
     } else {
@@ -200,9 +245,66 @@
     });
   }
 
+  function recipePdfPath(recipe, category) {
+    return `recipes/${category ? category.folder : ""}/${recipe.pdf}`;
+  }
+
+  function driveFileId(url) {
+    if (!url) return "";
+    const text = String(url);
+    const pathMatch = text.match(/\/d\/([a-zA-Z0-9_-]+)/);
+    if (pathMatch) return pathMatch[1];
+    try {
+      const parsed = new URL(text, window.location.href);
+      return parsed.searchParams.get("id") || "";
+    } catch (_) {
+      return "";
+    }
+  }
+
+  function recipeDocumentUrls(recipe, category) {
+    const localUrl = recipePdfPath(recipe, category);
+    const driveUrl = recipe.driveUrl || "";
+    const fileId = driveFileId(driveUrl);
+
+    if (fileId) {
+      return {
+        preview: `https://drive.google.com/file/d/${fileId}/preview`,
+        open: `https://drive.google.com/file/d/${fileId}/view`,
+        download: `https://drive.google.com/uc?export=download&id=${fileId}`,
+        fromDrive: true
+      };
+    }
+
+    const source = driveUrl || localUrl;
+    return { preview: source, open: source, download: source, fromDrive: Boolean(driveUrl) };
+  }
+
+  function recipeImagePath(recipe, category, item) {
+    const src = typeof item === "string" ? item : item && item.src;
+    if (!src) return "";
+    if (/^(https?:)?\/\//i.test(src) || /^data:/i.test(src)) return src;
+    return `recipes/${category ? category.folder : ""}/${src}`;
+  }
+
+  function recipeZipPath(recipe, category) {
+    if (!recipe || !recipe.downloadZip) return "";
+    return recipeImagePath(recipe, category, recipe.downloadZip);
+  }
+
   function recipeCardMarkup(recipe) {
     const cat = getCategory(recipe.category);
-    const pdfPath = `recipes/${cat ? cat.folder : ""}/${recipe.pdf}`;
+    const urls = recipeDocumentUrls(recipe, cat);
+    const downloadLabel = urls.fromDrive ? "Download from Drive" : "Download PDF";
+    const hasImageGallery = Array.isArray(recipe.images) && recipe.images.length > 0;
+    const viewAction = hasImageGallery
+      ? `<a class="view-recipe-btn" href="recipe-documents.html?recipe=${encodeURIComponent(recipe.id)}" target="_blank" rel="noopener">View Recipe</a>`
+      : `<button class="view-recipe-btn" type="button" data-recipe-id="${escapeHtml(recipe.id)}">View Recipe</button>`;
+    const zipUrl = recipeZipPath(recipe, cat);
+    const downloadAction = hasImageGallery && zipUrl
+      ? `<a class="pdf-btn" href="${escapeHtml(zipUrl)}" download>${ICONS.download} Download Recipe</a>`
+      : `<a class="pdf-btn" href="${escapeHtml(urls.download)}" target="_blank" rel="noopener">${ICONS.download} ${downloadLabel}</a>`;
+
     return `
       <article class="recipe-card">
         ${recipeMediaMarkup(recipe, cat)}
@@ -210,9 +312,8 @@
           <h3 class="recipe-name">${escapeHtml(recipe.name)}</h3>
           <p class="recipe-desc">${escapeHtml(recipe.description)}</p>
           <div class="recipe-foot">
-            <a class="pdf-btn" href="${pdfPath}" target="_blank" rel="noopener">
-              ${ICONS.download} Download PDF
-            </a>
+            ${viewAction}
+            ${downloadAction}
           </div>
         </div>
       </article>`;
@@ -239,7 +340,63 @@
   }
 
   /* ---------------------------------------------------------------------
-     6. ROUTER
+     6. RECIPE CARD VIEWER
+     Recipes with a `documents` array open the multi-PDF page in a new tab.
+     Other recipes continue to use the focused card-style modal.
+     --------------------------------------------------------------------- */
+  function openRecipeModal(recipeId) {
+    if (!recipeModal) return;
+    const recipe = RECIPES.find((item) => item.id === recipeId);
+    if (!recipe) return;
+
+    const category = getCategory(recipe.category);
+    const urls = recipeDocumentUrls(recipe, category);
+
+    if (recipeModalCategory) recipeModalCategory.textContent = category ? category.name : "Recipe";
+    if (recipeModalTitle) recipeModalTitle.textContent = recipe.name;
+    if (recipeModalDescription) recipeModalDescription.textContent = recipe.description;
+    if (recipePreviewFrame) recipePreviewFrame.src = urls.preview;
+    if (recipePreviewNote) recipePreviewNote.hidden = true;
+    if (recipeOpenLink) recipeOpenLink.href = urls.open;
+    if (recipeDownloadLink) {
+      recipeDownloadLink.href = urls.download;
+      recipeDownloadLink.textContent = urls.fromDrive ? "Download from Drive" : "Download PDF";
+    }
+
+    recipeModal.hidden = false;
+    document.body.classList.add("modal-open");
+    const closeButton = $(".recipe-modal-close", recipeModal);
+    if (closeButton) closeButton.focus();
+  }
+
+  function closeRecipeModal() {
+    if (!recipeModal || recipeModal.hidden) return;
+    recipeModal.hidden = true;
+    document.body.classList.remove("modal-open");
+    if (recipePreviewFrame) recipePreviewFrame.src = "about:blank";
+  }
+
+  function wireRecipeViewer() {
+    if (recipeGrid) {
+      recipeGrid.addEventListener("click", (event) => {
+        const button = event.target.closest(".view-recipe-btn");
+        if (button && button.dataset.recipeId) openRecipeModal(button.dataset.recipeId);
+      });
+    }
+
+    if (recipeModal) {
+      recipeModal.addEventListener("click", (event) => {
+        if (event.target.closest("[data-close-recipe]")) closeRecipeModal();
+      });
+    }
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeRecipeModal();
+    });
+  }
+
+  /* ---------------------------------------------------------------------
+     7. ROUTER
      Hash formats supported:
        #/               -> home
        #/library        -> library, all categories
@@ -313,7 +470,7 @@
     let active = "home";
 
     if (path.startsWith("/library")) {
-      active = params.get("cat") === "seasonings" ? "seasonings" : "library";
+      active = "library";
     } else if (path === "about" || (path === "/" && aboutInView)) {
       active = "about";
     }
@@ -405,12 +562,8 @@
   }
 
   /* ---------------------------------------------------------------------
-     11. HEADER SEALS + FOOTER YEAR
+     11. FOOTER YEAR
      --------------------------------------------------------------------- */
-  function injectSeals() {
-    $$(".seal").forEach((el) => { el.innerHTML = SEAL_SVG; });
-  }
-
   function setYear() {
     if (yearEl) yearEl.textContent = String(new Date().getFullYear());
   }
@@ -419,13 +572,13 @@
      12. INIT
      --------------------------------------------------------------------- */
   function init() {
-    injectSeals();
     setYear();
-    renderStats();
+    updateRecipeCounts();
     renderCategoryGrid();
     renderFooterLinks();
     renderFilterRow();
     wireSearch();
+    wireRecipeViewer();
     wireNavSearchButton();
     wireMobileNav();
     observeReveals();

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PureEra Recipe Gallery</title>
+<meta name="description" content="PureEra recipe image gallery.">
+<link rel="icon" type="image/png" href="assets/pure-era-logo.png">
+<link rel="stylesheet" href="recipe-documents.css?v=20260726-v13">
+</head>
+<body>
+<main class="image-gallery" id="imageGallery" aria-label="Recipe image gallery" aria-live="polite">
+  <button class="gallery-arrow gallery-arrow-prev" id="previousImage" type="button" aria-label="Show previous image">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+  </button>
+
+  <img class="gallery-image" id="galleryImage" alt="">
+
+  <button class="gallery-arrow gallery-arrow-next" id="nextImage" type="button" aria-label="Show next image">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+  </button>
+</main>
+
+<script src="data.js?v=20260726-v13"></script>
+<script src="recipe-documents.js?v=20260726-v13"></script>
+</body>
+</html>

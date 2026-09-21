@@ -1,0 +1,11 @@
+PureEra Website - Split Download Package
+
+Because the complete website is about 2.7 GB, it has been split into smaller archives.
+
+How to assemble:
+1. Extract 00_PureEra_Core.zip into a new folder, for example PureEra_Website.
+2. Extract EVERY recipe part ZIP into that same PureEra_Website folder.
+3. When asked to merge folders, choose Merge/Yes. Do not rename folders.
+4. After all parts are extracted, the site will have index.html plus recipes/... and will work as the complete codebase.
+
+All recipe part ZIPs preserve the correct recipes/<Category>/<Recipe>/ folder paths.
