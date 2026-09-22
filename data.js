@@ -792,9 +792,9 @@ const RECIPES = [
     description: "Flaky baked pinwheels filled with seasoned vegetables and herbs.",
     downloadZip: "BakedVegPinwheel/Baked-Veg-Pinwheel-Recipe.zip",
     images: [
-      { src: "BakedVegPinwheel/1.webp", alt: "Baked Veg Pinwheel cover" },
-      { src: "BakedVegPinwheel/2.webp", alt: "Baked Veg Pinwheel recipe image 2" },
-      { src: "BakedVegPinwheel/3.webp", alt: "Baked Veg Pinwheel recipe image 3" }
+      { src: "BakedVegPinwheel/1.png", alt: "Baked Veg Pinwheel cover" },
+      { src: "BakedVegPinwheel/2.png", alt: "Baked Veg Pinwheel recipe image 2" },
+      { src: "BakedVegPinwheel/3.png", alt: "Baked Veg Pinwheel recipe image 3" }
     ]
   },
   {
@@ -804,9 +804,9 @@ const RECIPES = [
     description: "Soft banana muffins warmly spiced with cinnamon.",
     downloadZip: "BananaCinnamonMuffins/Banana-Cinnamon-Muffins-Recipe.zip",
     images: [
-      { src: "BananaCinnamonMuffins/1.webp", alt: "Banana Cinnamon Muffins cover" },
-      { src: "BananaCinnamonMuffins/2.webp", alt: "Banana Cinnamon Muffins recipe image 2" },
-      { src: "BananaCinnamonMuffins/3.webp", alt: "Banana Cinnamon Muffins recipe image 3" }
+      { src: "BananaCinnamonMuffins/1.png", alt: "Banana Cinnamon Muffins cover" },
+      { src: "BananaCinnamonMuffins/2.png", alt: "Banana Cinnamon Muffins recipe image 2" },
+      { src: "BananaCinnamonMuffins/3.png", alt: "Banana Cinnamon Muffins recipe image 3" }
     ]
   },
   {
@@ -816,9 +816,9 @@ const RECIPES = [
     description: "Soft eggless cinnamon rolls with a sweet spiced swirl.",
     downloadZip: "CinnamonRollsEggless/Cinnamon-Rolls-Eggless-Recipe.zip",
     images: [
-      { src: "CinnamonRollsEggless/1.webp", alt: "Cinnamon Rolls (Eggless) cover" },
-      { src: "CinnamonRollsEggless/2.webp", alt: "Cinnamon Rolls (Eggless) recipe image 2" },
-      { src: "CinnamonRollsEggless/3.webp", alt: "Cinnamon Rolls (Eggless) recipe image 3" }
+      { src: "CinnamonRollsEggless/1.png", alt: "Cinnamon Rolls (Eggless) cover" },
+      { src: "CinnamonRollsEggless/2.png", alt: "Cinnamon Rolls (Eggless) recipe image 2" },
+      { src: "CinnamonRollsEggless/3.png", alt: "Cinnamon Rolls (Eggless) recipe image 3" }
     ]
   },
   {
