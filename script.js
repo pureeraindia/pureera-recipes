@@ -300,9 +300,8 @@
     const viewAction = hasImageGallery
       ? `<a class="view-recipe-btn" href="recipe-documents.html?recipe=${encodeURIComponent(recipe.id)}" target="_blank" rel="noopener">View Recipe</a>`
       : `<button class="view-recipe-btn" type="button" data-recipe-id="${escapeHtml(recipe.id)}">View Recipe</button>`;
-    const zipUrl = recipeZipPath(recipe, cat);
-    const downloadAction = hasImageGallery && zipUrl
-      ? `<a class="pdf-btn" href="${escapeHtml(zipUrl)}" download>${ICONS.download} Download Recipe</a>`
+    const downloadAction = hasImageGallery
+      ? `<button class="pdf-btn recipe-download-btn" type="button" data-recipe-download-id="${escapeHtml(recipe.id)}">${ICONS.download} Download Recipe</button>`
       : `<a class="pdf-btn" href="${escapeHtml(urls.download)}" target="_blank" rel="noopener">${ICONS.download} ${downloadLabel}</a>`;
 
     return `
@@ -317,6 +316,62 @@
           </div>
         </div>
       </article>`;
+  }
+
+  function safeFileName(value) {
+    return String(value || "PureEra-Recipe")
+      .replace(/[^a-z0-9]+/gi, "-")
+      .replace(/^-+|-+$/g, "") || "PureEra-Recipe";
+  }
+
+  async function downloadRecipeImages(recipeId, button) {
+    const recipe = RECIPES.find((item) => item.id === recipeId);
+    if (!recipe || !Array.isArray(recipe.images) || !recipe.images.length) return;
+
+    if (typeof JSZip === "undefined") {
+      window.alert("Recipe download is temporarily unavailable. Please try again.");
+      return;
+    }
+
+    const category = getCategory(recipe.category);
+    const originalLabel = button ? button.innerHTML : "";
+    if (button) {
+      button.disabled = true;
+      button.innerHTML = `${ICONS.download} Preparing ZIP…`;
+    }
+
+    try {
+      const zip = new JSZip();
+      for (let index = 0; index < recipe.images.length; index += 1) {
+        const item = recipe.images[index];
+        const url = recipeImagePath(recipe, category, item);
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`Could not download ${url}`);
+        const blob = await response.blob();
+        const src = typeof item === "string" ? item : item.src;
+        const extensionMatch = String(src || "").match(/\.([a-z0-9]+)(?:[?#].*)?$/i);
+        const extension = extensionMatch ? extensionMatch[1].toLowerCase() : "webp";
+        zip.file(`${index + 1}.${extension}`, blob);
+      }
+
+      const archive = await zip.generateAsync({ type: "blob", compression: "DEFLATE", compressionOptions: { level: 6 } });
+      const href = URL.createObjectURL(archive);
+      const link = document.createElement("a");
+      link.href = href;
+      link.download = `${safeFileName(recipe.name)}-Recipe.zip`;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      setTimeout(() => URL.revokeObjectURL(href), 1000);
+    } catch (error) {
+      console.error(error);
+      window.alert("We could not prepare this recipe download. Please try again.");
+    } finally {
+      if (button) {
+        button.disabled = false;
+        button.innerHTML = originalLabel;
+      }
+    }
   }
 
   function emptyStateMarkup() {
@@ -379,6 +434,13 @@
   function wireRecipeViewer() {
     if (recipeGrid) {
       recipeGrid.addEventListener("click", (event) => {
+        const downloadButton = event.target.closest(".recipe-download-btn");
+        if (downloadButton && downloadButton.dataset.recipeDownloadId) {
+          event.preventDefault();
+          downloadRecipeImages(downloadButton.dataset.recipeDownloadId, downloadButton);
+          return;
+        }
+
         const button = event.target.closest(".view-recipe-btn");
         if (button && button.dataset.recipeId) openRecipeModal(button.dataset.recipeId);
       });
